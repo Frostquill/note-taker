@@ -1,6 +1,20 @@
-[
+{
+  "notes": [
     {
-        "title":"Test Title",
-        "text":"Test text"
+      "title": "Test Title",
+      "text": "Test text"
+    },
+    {
+      "title": "Test Title 2",
+      "text": "Test text 2"
+    },
+    {
+      "title": "Appointment",
+      "text": "Medical"
+    },
+    {
+      "title": "Appointment",
+      "text": "Dentist"
     }
-]
+  ]
+}

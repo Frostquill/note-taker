@@ -51,6 +51,11 @@ function validateNote (note) {
     return true;
 };
 
+function findById(id, notesArray) {
+    const result = notesArray.filter(note => note.id === id)[0];
+    return result;
+}
+
 
 
 
@@ -63,8 +68,19 @@ app.get('/api/notes', function (req, res) {
   res.json(results);
 });
 
+app.get('/api/notes/:id', (req, res) => {
+    const result = findById(req.params.id, notes);
+    if(result) {
+        res.json(result);
+    } else {
+        res.send(404);
+    }
+    
+});
+
 
 app.post('/api/notes', (req, res) => {
+    req.body.id = notes.length.toString();
     if(!validateNote(req.body)) {
         res.status(400).send('The note is not properly formatted.');
     } else {
@@ -72,6 +88,8 @@ app.post('/api/notes', (req, res) => {
     res.json(note);
     }
 });
+
+
 
 app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, './Develop/public/index.html'));

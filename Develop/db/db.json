@@ -1,24 +1,39 @@
 {
   "notes": [
     {
+      "id": "1",
       "title": "Test Title",
       "text": "Test text"
     },
     {
+      "id": "2",
       "title": "Test Title 2",
       "text": "Test text 2"
     },
     {
+      "id": "3",
       "title": "Appointment",
       "text": "Medical"
     },
     {
+      "id": "4",
       "title": "Appointment",
       "text": "Dentist"
     },
     {
-      "title": ";asldkfj",
-      "text": ";asldkjf"
+      "title": "shopping",
+      "text": "Groceries",
+      "id": "5"
+    },
+    {
+      "title": "gym",
+      "text": "5:00pm",
+      "id": "6"
+    },
+    {
+      "title": "travel",
+      "text": "buy plane tickets",
+      "id": "6"
     }
   ]
 }

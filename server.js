@@ -7,6 +7,18 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static('./Develop/public'));
+
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, './Develop/public/index.html'));
+
+});
+
+app.get('/notes', function (req,res) {
+    res.sendFile(path.join(__dirname, './Develop/public/notes.html'));
+});
+
+
 
 function filterByQuery (query, notesArray) {
     let filResults = notesArray;
@@ -27,7 +39,7 @@ function createNewNote(body, notesArray) {
         JSON.stringify({ notes: notesArray}, null, 2)
     );
     return note;
-}
+};
 
 function validateNote (note) {
     if(!note.title || typeof note.title !== 'string') {
@@ -37,12 +49,11 @@ function validateNote (note) {
         return false;
     }
     return true;
-}
+};
 
-app.get('/', function (req, res) {
-    res.send('hello');
 
-})
+
+
 
 app.get('/api/notes', function (req, res) {
   let results = notes;
@@ -60,6 +71,10 @@ app.post('/api/notes', (req, res) => {
     const note = createNewNote(req.body, notes);
     res.json(note);
     }
+});
+
+app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, './Develop/public/index.html'));
 });
 
 app.listen(PORT, () => {

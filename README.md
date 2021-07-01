@@ -1,4 +1,4 @@
-# Note Taker Starter Code
+# Note Taker
 
 The following challenge was completed to meet the following criteria:
 
